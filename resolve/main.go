@@ -1,4 +1,4 @@
-package mai
+package main
 
 import (
 	"context"
@@ -17,7 +17,7 @@ func main() {
 		panic(err)
 	}
 
-	desc, err := repo.Manifests().Resolve(ctx, ref)
+	desc, err := repo.Resolve(ctx, ref)
 	if err != nil {
 		panic(err)
 	}
@@ -26,5 +26,4 @@ func main() {
 
 	_, err = repo.Resolve(ctx, bogusref)
 	fmt.Printf("%v\n", err)
-
 }
